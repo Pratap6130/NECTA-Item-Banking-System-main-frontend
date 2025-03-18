@@ -1,13 +1,3 @@
-# CoreUI Free React Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=CoreUI%20-%20Free%React%204%20Admin%20Template%20&url=https://coreui.io&hashtags=bootstrap,admin,template,dashboard,panel,free,angular,react,vue)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![@coreui coreui](https://img.shields.io/badge/@coreui%20-coreui-lightgrey.svg?style=flat-square)](https://github.com/coreui/coreui)
-[![npm package][npm-coreui-badge]][npm-coreui]
-[![NPM downloads][npm-coreui-download]][npm-coreui]
-[![@coreui react](https://img.shields.io/badge/@coreui%20-react-lightgrey.svg?style=flat-square)](https://github.com/coreui/react)
-[![npm package][npm-coreui-react-badge]][npm-coreui-react]
-[![NPM downloads][npm-coreui-react-download]][npm-coreui-react]  
-
 [npm-coreui]: https://www.npmjs.com/package/@coreui/coreui
 [npm-coreui-badge]: https://img.shields.io/npm/v/@coreui/coreui.png?style=flat-square
 [npm-coreui-download]: https://img.shields.io/npm/dm/@coreui/coreui.svg?style=flat-square
@@ -43,24 +33,6 @@ CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of 
 * [CoreUI Free React.js Admin Template (Vite)](https://github.com/coreui/coreui-free-react-admin-template)
 * [CoreUI Free React.js Admin Template (Create React App)](https://github.com/coreui/coreui-free-react-admin-template-cra)
 * [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
-
-## CoreUI PRO
-
-* 💪  [CoreUI PRO Angular Admin Template](https://coreui.io/product/angular-dashboard-template/)
-* 💪  [CoreUI PRO Bootstrap Admin Template](https://coreui.io/product/bootstrap-dashboard-template/)
-* 💪  [CoreUI PRO Next.js Admin Template](https://coreui.io/product/next-js-dashboard-template/)
-* 💪  [CoreUI PRO React Admin Template](https://coreui.io/product/react-dashboard-template/)
-* 💪  [CoreUI PRO Vue Admin Template](https://coreui.io/product/vue-dashboard-template/)
-
-## CoreUI PRO React Admin Templates
-
-| Default Theme | Light Theme |
-| --- | --- |
-| [![CoreUI PRO React Admin Template](https://coreui.io/images/templates/coreui_pro_default_light_dark.webp)](https://coreui.io/product/react-dashboard-template/?theme=default) | [![CoreUI PRO React Admin Template](https://coreui.io/images/templates/coreui_pro_light_light_dark.webp)](https://coreui.io/product/react-dashboard-template/?theme=light)|
-
-| Modern Theme | Bright Theme |
-| --- | --- |
-| [![CoreUI PRO React Admin Template](https://coreui.io/images/templates/coreui_pro_default_v3_light_dark.webp)](https://coreui.io/product/react-dashboard-template/?theme=modern) | [![CoreUI PRO React Admin Template](https://coreui.io/images/templates/coreui_pro_light_v3_light_dark.webp)](https://coreui.io/product/react-dashboard-template/?theme=bright)|
 
 ## Quick Start
 
@@ -150,33 +122,6 @@ For transparency into our release cycle and in striving to maintain backward com
 
 See [the Releases section of our project](https://github.com/coreui/coreui-free-react-admin-template/releases) for changelogs for each release version.
 
-## Creators
-
-**Łukasz Holeczek**
-
-* <https://twitter.com/lukaszholeczek>
-* <https://github.com/mrholek>
-
-**Andrzej Kopański**
-
-* <https://github.com/xidedix>
-
-**CoreUI Team**
-
-* <https://twitter.com/core_ui>
-* <https://github.com/coreui>
-* <https://github.com/orgs/coreui/people>
-
-## Community
-
-Get updates on CoreUI's development and chat with the project maintainers and community members.
-
-- Follow [@core_ui on Twitter](https://twitter.com/core_ui).
-- Read and subscribe to [CoreUI Blog](https://coreui.ui/blog/).
-
-## Support CoreUI Development
-
-CoreUI is an MIT-licensed open source project and is completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. You can support development by buying the [CoreUI PRO](https://coreui.io/pricing/?framework=react&src=github-coreui-free-react-admin-template) or by becoming a sponsor via [Open Collective](https://opencollective.com/coreui/).
 
 ## Copyright and License
 
