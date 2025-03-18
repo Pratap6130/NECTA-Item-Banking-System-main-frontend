@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Item Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-wrapper {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ffffff, #e6e6e6);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
+      background-color: #fafafa;
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4CAF50;
+      background-color: #fff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    fieldset {
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      background-color: #e1f5fe;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    legend {
+      font-weight: bold;
+      color: #0288d1;
+      padding: 0 10px;
+      font-size: 1.2em;
+    }
+
+    .form-section {
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    .form-navigation {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .nav-section {
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      padding: 10px;
+    }
+
+    .nav-section.active {
+      font-weight: bold;
+    }
+
+    .nav-wrapper {
+      background-color: #f0f2f5;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .nav-wrapper ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-wrapper ul li {
+      margin-right: 10px;
+    }
+
+    .col-8 {
+      margin: 0 auto;
+      /* Centering the content */
+      width: 100%;
+      /* Ensuring full width responsiveness */
+      max-width: 800px;
+      /* Adjust based on your design */
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="nav-wrapper">
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link nav-section active" onclick="showSection(0)">Item Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-section" onclick="showSection(1)">Topic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-section" onclick="showSection(2)">Content</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-section" onclick="showSection(3)">Item Category</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-section" onclick="showSection(4)">Item Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-section" onclick="showSection(5)">Other Details</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-8">
+    <div id="section0" class="form-section active">
+      <fieldset>
+        <legend>Item Details</legend>
+        <div class="hidden">
+          <label for="id">ID</label>
+          <input type="number" id="id" name="id" data-table="items" required readonly>
+        </div>
+
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" name="weight" data-table="items" required>
+
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" step="0.01" data-table="items" required>
+
+        <label for="publisher">Publisher</label>
+        <input type="text" id="publisher" name="publisher" data-table="publications" required>
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" data-table="publications" required>
+
+        <label for="editor">Editor</label>
+        <input type="text" id="editor" name="editor" data-table="publications" required>
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-primary" onclick="showSection(1)">Next</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div id="section1" class="form-section">
+      <fieldset>
+        <legend>Topic</legend>
+        <div class="hidden">
+          <label for="topic_id">Topic ID</label>
+          <input type="number" id="topic_id" name="topic_id" data-table="topics" required readonly>
+        </div>
+
+        <label for="topic_name">Name</label>
+        <input type="text" id="topic_name" name="topic_name" data-table="topics" required>
+
+        <label for="number_of_items">Number of Items</label>
+        <input type="number" id="number_of_items" name="number_of_items" data-table="topics" required>
+
+        <label for="total_weight">Total Weight</label>
+        <input type="number" id="total_weight" name="total_weight" data-table="topics" required>
+      </fieldset>
+      <fieldset>
+        <legend>Subject</legend>
+        <div class="hidden">
+          <label for="subject_id">Subject ID</label>
+          <input type="number" id="subject_id" name="subject_id" data-table="subjects" required readonly>
+        </div>
+
+        <label for="subject_code">Code</label>
+        <input type="text" id="subject_code" name="subject_code" data-table="subjects" required>
+
+        <label for="subject_name">Name</label>
+        <input type="text" id="subject_name" name="subject_name" data-table="subjects" required>
+
+        <label for="subject_shortname">Short Name</label>
+        <input type="text" id="subject_shortname" name="subject_shortname" data-table="subjects" required>
+
+        <label for="subject_description">Description</label>
+        <textarea id="subject_description" name="subject_description" data-table="subjects" rows="2"
+          required></textarea>
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-secondary" onclick="showSection(0)">Previous</button>
+        <button type="button" class="btn btn-primary" onclick="showSection(2)">Next</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div id="section2" class="form-section">
+      <fieldset>
+        <legend>Content</legend>
+        <div class="hidden">
+          <label for="content_id">Content ID</label>
+          <input type="number" id="content_id" name="content_id" data-table="content" required readonly>
+        </div>
+
+        <label for="content_name">Name</label>
+        <input type="text" id="content_name" name="content_name" data-table="content" required>
+
+        <label for="content_created">Created</label>
+        <input type="datetime-local" id="content_created" name="content_created" data-table="content" required>
+
+        <label for="content_modified">Modified</label>
+        <input type="datetime-local" id="content_modified" name="content_modified" data-table="content" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exam Type</legend>
+        <div class="hidden">
+          <label for="examtypes_id">Exam Type ID</label>
+          <input type="number" id="examtypes_id" name="examtypes_id" data-table="examtypes" required readonly>
+        </div>
+
+        <label for="examtypes_name">Name</label>
+        <input type="text" id="examtypes_name" name="examtypes_name" data-table="examtypes" required>
+
+        <label for="examtypes_shortname">Short Name</label>
+        <input type="text" id="examtypes_shortname" name="examtypes_shortname" data-table="examtypes" required>
+
+        <label for="examtypes_description">Description</label>
+        <textarea id="examtypes_description" name="examtypes_description" data-table="examtypes" rows="2"
+          required></textarea>
+
+        <label for="examtypes_code">Code</label>
+        <input type="text" id="examtypes_code" name="examtypes_code" data-table="examtypes" required>
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-secondary" onclick="showSection(1)">Previous</button>
+        <button type="button" class="btn btn-primary" onclick="showSection(3)">Next</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div id="section3" class="form-section">
+      <fieldset>
+        <legend>Item Category</legend>
+        <div class="hidden">
+          <label for="itemcategory_id">Item Category ID</label>
+          <input type="number" id="itemcategory_id" name="itemcategory_id" data-table="itemcategories" required
+            readonly>
+        </div>
+
+        <label for="itemcategory_code">Code</label>
+        <input type="text" id="itemcategory_code" name="itemcategory_code" data-table="itemcategories" required>
+
+        <label for="itemcategory_name">Name</label>
+        <input type="text" id="itemcategory_name" name="itemcategory_name" data-table="itemcategories" required>
+
+        <label for="itemcategory_shortname">Short Name</label>
+        <input type="text" id="itemcategory_shortname" name="itemcategory_shortname" data-table="itemcategories"
+          required>
+
+        <label for="itemcategory_description">Description</label>
+        <textarea id="itemcategory_description" name="itemcategory_description" data-table="itemcategories" rows="2"
+          required></textarea>
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-secondary" onclick="showSection(2)">Previous</button>
+        <button type="button" class="btn btn-primary" onclick="showSection(4)">Next</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div id="section4" class="form-section">
+      <fieldset>
+        <legend>Status</legend>
+        <div class="hidden">
+          <label for="statuse_id">Status ID</label>
+          <input type="number" id="statuse_id" name="statuse_id" data-table="statuses" required readonly>
+
+          <label for="status_item_id">Item ID</label>
+          <input type="number" id="status_item_id" name="status_item_id" data-table="statuses" required readonly>
+
+          <label for="status_user_id">User ID</label>
+          <input type="number" id="status_user_id" name="status_user_id" data-table="statuses" required readonly>
+        </div>
+
+        <label for="reverse_comment">Reverse Comment</label>
+        <textarea id="reverse_comment" name="reverse_comment" data-table="statuses" rows="2" required></textarea>
+
+        <label for="status">Status</label>
+        <input type="text" id="status" name="status" data-table="statuses" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Skill</legend>
+        <div class="hidden">
+          <label for="skill_id">Skill ID</label>
+          <input type="number" id="skill_id" name="skill_id" data-table="skills" required readonly>
+        </div>
+
+        <label for="skill_name">Name</label>
+        <input type="text" id="skill_name" name="skill_name" data-table="skills" required>
+
+        <label for="skill_description">Description</label>
+        <textarea id="skill_description" name="skill_description" data-table="skills" rows="2" required></textarea>
+
+        <fieldset>
+          <legend>Skill Level</legend>
+          <div class="hidden">
+            <label for="skilllevel_id">Skill Level ID</label>
+            <input type="number" id="skilllevel_id" name="skilllevel_id" data-table="skill_levels" required readonly>
+          </div>
+          <label for="skilllevel_name">Name</label>
+          <input type="text" id="skilllevel_name" name="skilllevel_name" data-table="skill_levels" required>
+        </fieldset>
+      </fieldset>
+
+      <fieldset>
+        <legend>Paper</legend>
+        <div class="hidden">
+          <label for="paper_id">Paper ID</label>
+          <input type="number" id="paper_id" name="paper_id" data-table="papers" required readonly>
+        </div>
+
+        <label for="paper_name">Name</label>
+        <input type="text" id="paper_name" name="paper_name" data-table="papers" required>
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-secondary" onclick="showSection(3)">Previous</button>
+        <button type="button" class="btn btn-primary" onclick="showSection(5)">Next</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div id="section5" class="form-section">
+      <fieldset>
+        <legend>Other Details</legend>
+        <label for="publish_date">Publish Date</label>
+        <input type="date" id="publish_date" name="publish_date" data-table="publications" required>
+
+        <label for="volume">Volume</label>
+        <input type="text" id="volume" name="volume" data-table="publications" required>
+
+        <label for="url">URL</label>
+        <input type="url" id="url" name="url" data-table="publications" required>
+
+        <label for="has_dual_language">Has Dual Language</label>
+        <select id="has_dual_language" name="has_dual_language" data-table="publications" required>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="created">Created</label>
+        <input type="datetime-local" id="created" name="created" data-table="items" required>
+
+        <label for="modified">Modified</label>
+        <input type="datetime-local" id="modified" name="modified" data-table="items" required>
+
+      </fieldset>
+      <div class="form-navigation text-center">
+        <button type="button" class="btn btn-secondary" onclick="showSection(4)">Previous</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(index) {
+      const sections = document.querySelectorAll('.form-section');
+      const navLinks = document.querySelectorAll('.nav-section');
+      sections.forEach((section, i) => {
+        if (i === index) {
+          section.classList.add('active');
+          navLinks[i].classList.add('active');
+        } else {
+          section.classList.remove('active');
+          navLinks[i].classList.remove('active');
+        }
+      });
+    }
+
+    function generateRandomId() {
+      return Math.floor(Math.random() * 1000000); // generates a random number between 0 and 999999
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('id').value = generateRandomId();
+      document.getElementById('topic_id').value = generateRandomId();
+      document.getElementById('subject_id').value = generateRandomId();
+      document.getElementById('examtypes_id').value = generateRandomId();
+      document.getElementById('content_id').value = generateRandomId();
+      document.getElementById('itemcategory_id').value = generateRandomId();
+      document.getElementById('statuse_id').value = generateRandomId();
+      document.getElementById('status_item_id').value = generateRandomId();
+      document.getElementById('status_user_id').value = generateRandomId();
+      document.getElementById('skill_id').value = generateRandomId();
+      document.getElementById('skilllevel_id').value = generateRandomId();
+      document.getElementById('paper_id').value = generateRandomId();
+    });
+
+    document.getElementById('createItemForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+
+</html>

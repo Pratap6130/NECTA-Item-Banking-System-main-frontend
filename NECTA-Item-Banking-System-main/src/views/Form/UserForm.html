@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Form</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: linear-gradient(145deg, #f0f2f5, #d7f1fe);
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #faf7f7, #e6e6e6);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="datetime-local"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 98%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #43cea2;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #185a9d;
+    }
+
+    .radio-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Database Form</h1>
+  <form action="/submit" method="post">
+    <h2>Users</h2>
+
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" maxlength="45">
+
+    <label for="other_names">Other Names:</label>
+    <input type="text" id="other_names" name="other_names" maxlength="45">
+
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" maxlength="45">
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="tel" id="phone_number" name="phone_number" maxlength="45">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" maxlength="45">
+
+    <label for="created">Created:</label>
+    <input type="datetime-local" id="created" name="created" required>
+
+    <label for="is_disabled">Is Disabled:</label>
+    <input type="checkbox" id="is_disabled" name="is_disabled" value="1">
+
+    <label for="role_id">Role ID:</label>
+    <input type="number" id="role_id" name="role_id" min="1" max="9999" required>
+
+    <label for="is_force_change_password">Force Change Password:</label>
+    <input type="checkbox" id="is_force_change_password" name="is_force_change_password" value="1">
+
+    <label for="reset_code_expire_time">Reset Code Expire Time:</label>
+    <input type="datetime-local" id="reset_code_expire_time" name="reset_code_expire_time">
+
+    <label for="modified">Modified:</label>
+    <input type="datetime-local" id="modified" name="modified">
+
+    <label for="reset_code">Reset Code:</label>
+    <textarea id="reset_code" name="reset_code"></textarea>
+
+    <h2>Assessors</h2>
+    <label for="Assessor_ID">ID:</label>
+    <input type="number" id="Assessor_ID" name="Assessor_ID" maxlength="11" required>
+
+    <label for="CSEE_number">CSEE Number:</label>
+    <input type="text" id="CSEE_number" name="CSEE_number" maxlength="16" required>
+
+    <label for="CSEE_year">CSEE Year:</label>
+    <input type="number" id="CSEE_year" name="CSEE_year" step="0.01" required>
+
+    <label for="sex">Sex:</label>
+    <input type="text" id="sex" name="sex" maxlength="8">
+
+    <label for="education_year">Education Year:</label>
+    <input type="text" id="education_year" name="education_year" maxlength="128">
+
+    <label for="experience">Experience (years):</label>
+    <input type="number" id="experience" name="experience" step="0.1" required>
+
+    <label for="file_reference">File Reference:</label>
+    <input type="text" id="file_reference" name="file_reference" maxlength="255">
+
+    <label for="endorsing_centre">Endorsing Centre:</label>
+    <input type="text" id="endorsing_centre" name="endorsing_centre" maxlength="255">
+
+    <label for="PO_box">P.O. Box:</label>
+    <input type="text" id="PO_box" name="PO_box" maxlength="255">
+
+    <label for="region">Region:</label>
+    <input type="text" id="region" name="region" maxlength="32">
+
+    <label for="district">District:</label>
+    <input type="text" id="district" name="district" maxlength="128">
+
+    <label for="initial">Initial:</label>
+    <input type="text" id="initial" name="initial" maxlength="8">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" maxlength="64">
+
+    <label for="bank_name">Bank Name:</label>
+    <input type="text" id="bank_name" name="bank_name" maxlength="64">
+
+    <label for="account_number">Account Number:</label>
+    <input type="text" id="account_number" name="account_number" maxlength="64">
+
+    <label for="account_name">Account Name:</label>
+    <input type="text" id="account_name" name="account_name" maxlength="64">
+
+    <label for="assessor_phone_number">Phone Number:</label>
+    <input type="tel" id="assessor_phone_number" name="assessor_phone_number" maxlength="64">
+
+    <label for="subject_code">Subject Code:</label>
+    <input type="text" id="subject_code" name="subject_code" maxlength="4">
+
+    <label for="initial_password">Initial Password:</label>
+    <input type="password" id="initial_password" name="initial_password" maxlength="64">
+
+    <label for="assessor_user_id">User ID:</label>
+    <input type="number" id="assessor_user_id" name="assessor_user_id" min="1" max="9999">
+
+    <h2>Role</h2>
+    <label for="Role_ID">Role ID:</label>
+    <input type="number" id="Role_ID" name="Role_ID" maxlength="11" required>
+
+    <label for="Role_name">Role Name:</label>
+    <input type="text" id="Role_name" name="Role_name" maxlength="50" required>
+
+    <label for="Role_Desc">Role Description:</label>
+    <input type="text" id="Role_Desc" name="Role_Desc" maxlength="255">
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>
